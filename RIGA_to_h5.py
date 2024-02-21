@@ -4,8 +4,8 @@
         (#, 320, 320, 3) for all prime images (! resizing needed)
         (#, 6, 320, 320) for all binary masks (! convert to 0,1,2)
         (#) MESSIDOR: 0, BinRushed1-Corrected: 1, BinRushed2: 2, BinRushed3: 3, BinRushed4: 4, MagrabiaFemale: 5, MagrabiaMale: 6
-        (#, 6, 1) vertical CDR
-        (#, 6, 1) area CDR
+        (#, 6) vertical CDR
+        (#, 6) area CDR
 '''
 import h5py
 from PIL import Image
