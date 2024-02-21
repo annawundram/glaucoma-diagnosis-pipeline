@@ -243,6 +243,20 @@ def create_hdf5_dataset(input_file, hdf5_file_path, label_file):
 
     hdf5_file.close()
 
+    # ---- majority vote ----
+    hdf5_file = h5py.File(hdf5_file_path, "r+")
+    from scipy.stats import mode
+    def get_majority_vote(diagnoses):
+        diagnoses_majority_votes = []
+        for i in range(diagnoses.shape[0]):
+            diagnoses_array = diagnoses[i, :]
+            vote = mode(diagnoses_array, keepdims=True)[0][0]
+            diagnoses_majority_votes.append(vote)
+        return diagnoses_majority_votes
+
+    hdf5_file.create_dataset("majority_vote", shape=(number_images, ), dtype="i", data=get_majority_vote(hdf5_file["diagnosis"]))
+
+    hdf5_file.close()
 
 def create_labels_dataset(file_bosch, file_forus, file_remidio, label_file):
     """ main function ot convert the directory of images to a hdf5 file.
