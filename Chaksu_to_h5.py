@@ -1,3 +1,15 @@
+'''
+1. create shuffle indices for train/val for all three vendors
+2. 2 datasets Train/ Val
+        (#, 320, 320, 3) for all prime images (! resizing needed)
+        (#, 5, 320, 320) for all binary masks (! convert to 0,1,2)
+        (#) Bosch: 0, Forus: 1, Remidio: 2
+        (#, 6) vertical CDR
+        (#, 6) area CDR
+        (#, 6) diagnosis
+        (#) majority vote
+'''
+
 import h5py
 from PIL import Image
 import numpy as np
