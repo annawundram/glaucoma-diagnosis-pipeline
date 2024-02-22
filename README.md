@@ -22,4 +22,5 @@ Use an adapted version of the public implementation of the [PHiSeg Code](https:/
 ## Classifier
 
 ## Visualization
+The entropy maps as well as the RTC plot can be generated using ```visualization.py```.
 
