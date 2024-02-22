@@ -15,11 +15,16 @@ First, the data used in this study must be prepared. Therefore, load the origina
 The ROI ectraction step can be skipped, by directly running ```Chaksu_to_h5.py, Chaksu_to_h5_test.py and RIGA_to_h5.py``` consecutively to create H5 files from the data. Alternatively, run ```ROI_from_unet.py``` to create ROI images. Note that this will overwrite previously loaded ROI images.
 
 ## Probabilistic Deep Learning Segmentation Model
-Use an adapted version of the public implementation of the [PHiSeg Code](https://github.com/baumgach/PHiSeg-code) (Baumgartner et al., 2019) for the PHiSeg, U-Net, probabilistic U-Net and MC Dropout implementation. Please refer to the original repository for further information on how to train the models. Note: Use the dataloader provided in ```data_loader.py```.
+Use an adapted version of the public implementation of the [PHiSeg Code](https://github.com/baumgach/PHiSeg-code) (Baumgartner et al., 2019) for the PHiSeg, U-Net, probabilistic U-Net and MC Dropout implementation. Train the models by running:
+
+```python train.py --method phiseg```. The following methods are possible: ```probunet, phiseg, unet, unet-mcdropout```.
+
+Please refer to the original repository for further information. 
 
 ## Rim Thickness Extraction and Training Data Generation
 
 ## Classifier
 
 ## Visualization
+The entropy maps as well as the RTC plot can be generated using ```visualization.py```.
 
