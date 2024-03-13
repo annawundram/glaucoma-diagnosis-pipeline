@@ -10,7 +10,7 @@ Install as follows:
 pip install -r requirements.txt
 
 ## Data
-First, the data used in this study must be prepared. Therefore, load the original [Chákṣu](https://www.nature.com/articles/s41597-023-01943-4) dataset (Kumar et al., 2023) as well as the original Retinal fundus images for glaucoma analysis: [RIGA](https://deepblue.lib.umich.edu/data/concern/data_sets/3b591905z) (Almazroa et al., 2018) dataset. Additionally, load the preprocessed data used in this paper from zenodo.
+First, the data used in this study must be prepared. Therefore, load the original [Chákṣu](https://www.nature.com/articles/s41597-023-01943-4) dataset (Kumar et al., 2023) as well as the original Retinal fundus images for glaucoma analysis: [RIGA](https://deepblue.lib.umich.edu/data/concern/data_sets/3b591905z) (Almazroa et al., 2018) dataset. Additionally, load the preprocessed data used in this paper from zenodo (will be available shortly).
 
 The ROI ectraction step can be skipped, by directly running ```Chaksu_to_h5.py, Chaksu_to_h5_test.py and RIGA_to_h5.py``` consecutively to create H5 files from the data. Alternatively, run ```ROI_from_unet.py``` to create ROI images. Note that this will overwrite previously loaded ROI images.
 
@@ -22,6 +22,7 @@ Use an adapted version of the public implementation of the [PHiSeg Code](https:/
 Please refer to the original repository for further information. 
 
 ## Rim Thickness Extraction and Training Data Generation
+The rim thickness is extracted using the ```rim_thickness_func``` in ```phiseg_dataset.py```. Further, this script demonstrates how to generate the training data for the classifier.
 
 ## Classifier
 For classification, we used a [Logistic Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) model as implemented in the [scikit-learn](https://scikit-learn.org/stable/index.html) package. You can fit and evaluate the classifiers for the cup-to-disc ratio with the ```classification_evaluation_cdr.py ``` file and for the rim-thickness-based classification you can use ```classification_evaluation_rtc.py```. Note that you have to generate datasets for your models as demonstrated in ```phiseg_dataset.py```.
