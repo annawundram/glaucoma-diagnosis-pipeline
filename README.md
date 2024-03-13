@@ -22,7 +22,7 @@ Use an adapted version of the public implementation of the [PHiSeg Code](https:/
 Please refer to the original repository for further information. 
 
 ## Rim Thickness Extraction and Training Data Generation
-The rim thickness is extracted using the ```rim_thickness_function``` in ```phiseg_dataset.py```. Further, this script demonstrates how to generate the training data for the classifier.
+The rim thickness is extracted using the ```rim_thickness_func``` in ```phiseg_dataset.py```. Further, this script demonstrates how to generate the training data for the classifier.
 
 ## Classifier
 For classification, we used a [Logistic Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) model as implemented in the [scikit-learn](https://scikit-learn.org/stable/index.html) package. You can fit and evaluate the classifiers for the cup-to-disc ratio with the ```classification_evaluation_cdr.py ``` file and for the rim-thickness-based classification you can use ```classification_evaluation_rtc.py```. Note that you have to generate datasets for your models as demonstrated in ```phiseg_dataset.py```.
