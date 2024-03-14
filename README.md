@@ -30,3 +30,6 @@ For classification, we used a [Logistic Regression](https://scikit-learn.org/sta
 ## Visualization
 The entropy maps as well as the RTC plot can be generated using ```visualization.py```.
 
+## Black Box Model
+We have also compared our pipeline to an end-to-end "black box model", a ResNet50. For the corresponding code, please refer to [this repository](https://github.com/baumgach/chaksu-classifier).
+
